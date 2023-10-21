@@ -4,32 +4,32 @@ const nodemailer = require('nodemailer');
 const token = '6934682720:AAFGX4zxJBwUcz07tuGSVTKhN6jgH76k1ss';
 
 // Настройки для отправки писем
-const transporter = nodemailer.createTransport({
-	service: 'smtp.yandex.ru',
-	port: 465, // Укажите адрес вашего SMTP-сервера
-	auth: {
-		user: 'gamediagnostic@ya.ru',
-		pass: '1q2w3e_2',
-	},
-});
+// const transporter = nodemailer.createTransport({
+// 	service: 'smtp.yandex.ru',
+// 	port: 465, // Укажите адрес вашего SMTP-сервера
+// 	auth: {
+// 		user: 'gamediagnostic@ya.ru',
+// 		pass: '1q2w3e_2',
+// 	},
+// });
 
 // Функция для отправки письма на почту
-function sendEmail(subject, text) {
-	const mailOptions = {
-		from: 'gamediagnostic@ya.ru', // Отправитель
-		to: 'philjke@mail.ru', // Получатель
-		subject: subject,
-		text: text,
-	};
+// function sendEmail(subject, text) {
+// 	const mailOptions = {
+// 		from: 'gamediagnostic@ya.ru', // Отправитель
+// 		to: 'philjke@mail.ru', // Получатель
+// 		subject: subject,
+// 		text: text,
+// 	};
 
-	transporter.sendMail(mailOptions, (error, info) => {
-		if (error) {
-			console.error('Ошибка отправки письма:', error);
-		} else {
-			console.log('Письмо успешно отправлено:', info.response);
-		}
-	});
-}
+// 	transporter.sendMail(mailOptions, (error, info) => {
+// 		if (error) {
+// 			console.error('Ошибка отправки письма:', error);
+// 		} else {
+// 			console.log('Письмо успешно отправлено:', info.response);
+// 		}
+// 	});
+// }
 
 // Варианты сообщений с описаниями
 const messages = [
@@ -79,10 +79,10 @@ function saveUserMessage(userId, username, messageText) {
 		});
 	});
 
-	const subject = 'Новое сообщение от пользователя ' + username;
-	const text = `Пользователь ${username} (ID: ${userId}) отправил следующее сообщение:\n\n${messageText}`;
+	// const subject = 'Новое сообщение от пользователя ' + username;
+	// const text = `Пользователь ${username} (ID: ${userId}) отправил следующее сообщение:\n\n${messageText}`;
 
-	sendEmail(subject, text);
+	// sendEmail(subject, text);
 }
 
 function sendWelcomeMessage(chatId) {
